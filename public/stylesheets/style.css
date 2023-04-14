@@ -1,8 +1,103 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+margin: 0%;
+padding: 0%;
+box-sizing: border-box;
+font-family: Gilroy;
+}
+html,
+body
+{
+width: 100%;
+height: 100%;
 }
 
-h1{
-  color: red;
+#main
+{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+}
+
+#left
+{
+  width: 20vw;
+  height: 100%;
+  background-color: rgba(55, 55, 148, 0.633);
+  position: relative;
+}
+#right
+{
+  width: 80vw;
+  height: 100%;
+  background-color: rgba(146, 132, 132, 0.63);
+}
+
+#lnav{
+  width: 100%;
+  height: 20px;
+  background-color: rgba(65, 65, 153, 0.821);
+  position: absolute;
+  top: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#lnav #icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap : 20px;
+  font-size: 20px;
+  
+}
+#files{
+  /* position:relative; */
+  width: 100%;
+  height: 10px;
+  display: flex;
+  top: 2%;
+  color: white;
+  gap: 4px;
+  align-items: center;
+  font-size: 10px;
+  padding-left: 30px;
+}
+
+input{
+width: calc(100% - 30px);
+padding: 7px;
+font-size: 10px;
+margin-left: 30px;
+margin-bottom: 10px;
+}
+
+#fileForm{
+  display: none;
+}
+#folderForm
+{
+  display: none;
+}
+
+#ll{
+  width: 100%;
+  height: 93%;
+  position: relative;
+  top: 7%;
+}
+#files i{
+  font-size: 20px;
+}
+#edit{
+  position: absolute;
+  right: 13%;
+  font-size: 20px;
+  color: white;
+  display : none;
+}
+#files:hover #edit{
+display: initial;
 }
