@@ -4,9 +4,15 @@ var router = express.Router();
 var fs = require("fs");
 /* GET home page. */
 router.get('/', function(req, res) {
-  fs.readdir("./uploads", function(err, file)
+  var arr = [];
+  fs.readdir("./uploads",{withFileTypes: true},function(err, files)
   {
-       res.render('index',{files : file});
+      files.forEach(function(elm)
+      {
+        console.log(elm);
+        arr.push({name : elm.name,isFolder : elm.isDirectory()});
+      })
+       res.render('index',{files : arr});
   })
 });
 

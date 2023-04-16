@@ -36,11 +36,20 @@
         </form>
 
         <%files.forEach(function(elem){ %>
+         <% if(elem.isFolder===true){ %>
           <div id="files">
-            <i id="fileicon" class="ri-file-line"></i>
-            <h1><%= elem %></h1>
+            <i id="fileicon" class="ri-folder-line"></i>
+            <h1><%= elem.name %></h1>
             <i id="edit" class="ri-pencil-line"></i>
           </div>
+         <% } else{%>
+          <div id="files">
+            <i id="fileicon" class="ri-file-line"></i>
+            <h1><%= elem.name %></h1>
+            <i id="edit" class="ri-pencil-line"></i>
+          </div>
+        <% }%>
+
        <% }) %>
 
       </div>
