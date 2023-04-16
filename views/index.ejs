@@ -34,11 +34,15 @@
         <form id="folderForm" action="">
           <input type="text" name="folderName" placeholder="Enter folder Name">
         </form>
-        <div id="files">
-          <i id="fileicon" class="ri-file-line"></i>
-          <h1>index.html</h1>
-          <i id="edit" class="ri-pencil-line"></i>
-        </div>
+
+        <%files.forEach(function(elem){ %>
+          <div id="files">
+            <i id="fileicon" class="ri-file-line"></i>
+            <h1><%= elem %></h1>
+            <i id="edit" class="ri-pencil-line"></i>
+          </div>
+       <% }) %>
+
       </div>
     </div>
     <div id="right"></div>
@@ -68,7 +72,12 @@
     if(det.keyCode===27)
     {
       donoOff();
+      document.querySelectorAll("form input").forEach(function(elem)
+      {
+        elem.value = "";
+      })
     }
   })
+
 </script>
 </html>

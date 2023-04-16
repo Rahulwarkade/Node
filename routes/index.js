@@ -1,10 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
+var fs = require("fs");
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index');
-  });
+  fs.readdir("./uploads", function(err, file)
+  {
+       res.render('index',{files : file});
+  })
+});
 
 router.post('/about', function(req, res) {
   res.render('about');
