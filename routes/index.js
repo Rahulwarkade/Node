@@ -37,4 +37,14 @@ router.get('/createFile',function(req,res)
     }
   })
 })
+router.get('/createFolder',function(req,res)
+{
+  fs.writedir(`./uploads/${req.query.folderName}`,"",function(err)
+  {
+    if(err) throw err;
+    else{
+      res.redirect('/');
+    }
+  })
+})
 module.exports = router;
