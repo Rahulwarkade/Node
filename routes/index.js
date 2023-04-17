@@ -9,7 +9,6 @@ router.get('/', function(req, res) {
   {
       files.forEach(function(elm)
       {
-        console.log(elm);
         arr.push({name : elm.name,isFolder : elm.isDirectory()});
       })
        res.render('index',{files : arr});
