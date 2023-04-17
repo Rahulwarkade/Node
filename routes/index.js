@@ -26,4 +26,15 @@ router.get('/output', function(req, res) {
   res.render('output',{name:req.query.username});
   console.log(req.query);
 });
+
+router.get('/createFile',function(req,res)
+{
+  fs.writeFile(`./uploads/${req.query.fileName}`,"",function(err)
+  {
+    if(err) throw err;
+    else{
+      res.redirect('/');
+    }
+  })
+})
 module.exports = router;
