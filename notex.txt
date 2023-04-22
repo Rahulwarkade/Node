@@ -1,0 +1,4 @@
+there are only three ways in you can change your url
+    1. Anchar taa <a> </a> prams
+    2. get method - query
+    3. post method - body

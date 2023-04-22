@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var fs = require("fs");
+var fs = require('node:fs');
 /* GET home page. */
 router.get('/', function(req, res) {
   var arr = [];
@@ -24,7 +24,7 @@ router.get('/contact', function(req, res) {
 });
 router.get('/output', function(req, res) {
   res.render('output',{name:req.query.username});
-  console.log(req.query);
+  // console.log(req.query);
 });
 
 router.get('/createFile',function(req,res)
@@ -32,19 +32,19 @@ router.get('/createFile',function(req,res)
   fs.writeFile(`./uploads/${req.query.fileName}`,"",function(err)
   {
     if(err) throw err;
-    else{
+    else
       res.redirect('/');
-    }
   })
-})
-router.get('/createFolder',function(req,res)
+});
+router.get("/createFolder",function(req,res)
 {
-  fs.writedir(`./uploads/${req.query.folderName}`,"",function(err)
+  fs.mkdir(`./uploads/${req.query.folderName}`,function(err)
   {
     if(err) throw err;
     else{
+      console.log(req.query.folderName);
       res.redirect('/');
     }
   })
-})
+});
 module.exports = router;
