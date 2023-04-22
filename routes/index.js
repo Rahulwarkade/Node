@@ -13,6 +13,13 @@ router.get('/', function(req, res) {
       })
        res.render('index',{files : arr});
   })
+
+  fs.readFile("./uploads/file.txt",'utf8',function(err,data)
+  {
+    if(err) throw err;
+    // else
+      // console.log(data);
+  })
 });
 
 router.post('/about', function(req, res) {
@@ -47,4 +54,11 @@ router.get("/createFolder",function(req,res)
     }
   })
 });
+
+router.get("/username/:name",function(req,res)
+{
+  // res.send("rahul's account.");
+  res.send(`${req.params.name}'s account.`)
+})
+
 module.exports = router;

@@ -22,7 +22,7 @@
         <div id="icons">
           <i id="fileicon" class="ri-file-line"></i>
           <i id="foldericon" class="ri-folder-2-line"></i>
-          <i class="ri-restart-line"></i>
+          <a href="/"><i class="ri-restart-line"></i></a>  
         </div>
       </div>
       
@@ -39,13 +39,13 @@
          <% if(elem.isFolder===true){ %>
           <div id="files">
             <i id="fileicon" class="ri-folder-line"></i>
-            <h1><%= elem.name %></h1>
+          <a href="/username/<%=elem.name%>"><h1><%= elem.name %></h1></a>  
             <i id="edit" class="ri-pencil-line"></i>
           </div>
          <% } else{%>
           <div id="files">
             <i id="fileicon" class="ri-file-line"></i>
-            <h1><%= elem.name %></h1>
+            <a href="/username/<%=elem.name%>"><h1><%= elem.name %></h1></a>
             <i id="edit" class="ri-pencil-line"></i>
           </div>
         <% }%>
@@ -53,7 +53,14 @@
 
       </div>
     </div>
-    <div id="right"></div>
+    <div id="right">
+      <div id="top-nav">
+        <div id="opened">
+          <h1>index.html</h1>
+          <i class="ri-close-line"></i>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 
