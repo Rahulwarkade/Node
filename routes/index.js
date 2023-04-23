@@ -1,3 +1,4 @@
+const { render } = require('ejs');
 var express = require('express');
 var router = express.Router();
 
@@ -14,12 +15,6 @@ router.get('/', function(req, res) {
        res.render('index',{files : arr});
   })
 
-  fs.readFile("./uploads/file.txt",'utf8',function(err,data)
-  {
-    if(err) throw err;
-    // else
-      // console.log(data);
-  })
 });
 
 router.post('/about', function(req, res) {
@@ -55,10 +50,25 @@ router.get("/createFolder",function(req,res)
   })
 });
 
-router.get("/username/:name",function(req,res)
+router.get("/fileName/:name",function(req,res)
 {
-  // res.send("rahul's account.");
-  res.send(`${req.params.name}'s account.`)
+  var arr = [];
+  fs.readdir("./uploads",{withFileTypes: true},function(err, files)
+  {
+      files.forEach(function(elm)
+      {
+        arr.push({name : elm.name,isFolder : elm.isDirectory()});
+      })
+
+      fs.readFile(`./uploads/${req.params.name}`,"utf8",function(err,data)
+      {
+        if(err) throw err;
+        else
+        {
+          res.render("indexUtil",{files:arr,fileName:req.params.name,data});
+        }
+      })
+    })
 })
 
 module.exports = router;
