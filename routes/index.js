@@ -31,7 +31,7 @@ router.get('/output', function(req, res) {
 
 router.get('/createFile',function(req,res)
 {
-  fs.writeFile(`./uploads/${req.query.fileName}`,"",function(err)
+  fs.writeFile(`./uploads/${req.query.fileName}`," ",function(err)
   {
     if(err) throw err;
     else
@@ -44,7 +44,6 @@ router.get("/createFolder",function(req,res)
   {
     if(err) throw err;
     else{
-      console.log(req.query.folderName);
       res.redirect('/');
     }
   })
