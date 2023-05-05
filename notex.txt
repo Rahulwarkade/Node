@@ -203,3 +203,36 @@ post -> req. body
 
 hum jab bhi form submit karte hai to wo form bhi kisi route par jaata hai wo  data leker jo appne likha tha form mei ab kuyki data gay hai backend par to shayad hame uski jarurat pade, aur jarurat padne par aapko use karna padega, to access kaise karoge?
 aisi koi bhi imput field jismein name naa ho wo bakcedn me nahi jaayegi
+
+
+                              MONGODB
+            
+            fist class
+
+install the package called mongoose
+   npm i mongoose
+
+setup the database with mongoose
+   var mongoose = require("mongoose")
+   mongoose.connect("mongodb://localhost:27017/dbname")
+   var userSchema = mongoose.Schema(
+      {
+         key : value,
+      }
+   )
+   modul.exports = mongoose.model("user",userSchema);
+   // app ke saare schema ingredients milke a model banate hai jiske through app create read update and delete kar payenge
+
+      second concept
+
+.create() 
+.then()
+
+      third concept 
+
+There are two type of data base:
+RDBMS - Releational Databse Managment System
+NDBMS - Noreleational database Management System
+
+RDBMS - sql-language,MySql-software
+NDBMS - Nosql
