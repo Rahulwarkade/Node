@@ -26,7 +26,6 @@ router.get('/contact', function(req, res) {
 });
 router.get('/output', function(req, res) {
   res.render('output',{name:req.query.username});
-  // console.log(req.query);
 });
 
 router.get('/createFile',function(req,res)
