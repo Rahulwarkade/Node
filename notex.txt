@@ -161,7 +161,14 @@ in new file to import require("./file name")
 npx nodemon script => it will reload by it self
 <%= 2+3%>
 
+
+                           EXPRESS 
+
 package installation
+npm i express-generator -g 
+   creating new app
+      express appName --view=ejs
+      npm i 
 npm i packageName
 Express
 ejs
@@ -207,7 +214,7 @@ aisi koi bhi imput field jismein name naa ho wo bakcedn me nahi jaayegi
 
                               MONGODB
             
-            fist class
+FIRST CLASS
 
 install the package called mongoose
    npm i mongoose
@@ -223,16 +230,21 @@ setup the database with mongoose
    modul.exports = mongoose.model("user",userSchema);
    // app ke saare schema ingredients milke a model banate hai jiske through app create read update and delete kar payenge
 
-      second concept
+
+SECOND CLASS
 
 .create() 
 .then()
 
-      third concept 
+THIRD CONCEPT
 
+//CURD OPERATIONS
 There are two type of data base:
 RDBMS - Releational Databse Managment System
 NDBMS - Noreleational database Management System
 
 RDBMS - sql-language,MySql-software
-NDBMS - Nosql
+NDBMS - Nosql,mongodb 
+cluster-chunck of data in db
+model/collaction : chunck of data in cluster
+Schema : chunck of data in model
